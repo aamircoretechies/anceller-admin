@@ -1,6 +1,8 @@
 import {
   BasicSettings,
-  PersonalInfo
+  PersonalInfo,
+  ManageServiceProfile,
+  ManageKycDocs
 } from './blocks';
 
 const AccountUserProfileContent = () => {
@@ -9,6 +11,8 @@ const AccountUserProfileContent = () => {
       <div className="col-span-1">
         <div className="grid gap-5 lg:gap-7.5">
           <PersonalInfo />
+           <ManageServiceProfile />
+           <ManageKycDocs />
         </div>
       </div>
 
