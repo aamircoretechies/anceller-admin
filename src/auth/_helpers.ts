@@ -45,6 +45,7 @@ export function setupAxios(axios: any) {
       const auth = getAuth();
 
       if (auth?.access_token) {
+        console.log('Bearer Token:', `Bearer ${auth.access_token}`);
         config.headers.Authorization = `Bearer ${auth.access_token}`;
       }
 

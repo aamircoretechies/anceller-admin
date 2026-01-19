@@ -45,6 +45,11 @@ export const MENU_SIDEBAR: TMenuConfig = [
     path: '/admin/policies'
   },
   {
+    title: 'Banner Management',
+    icon: 'laptop',
+    path: '/admin/banners'
+  },
+  {
     title: 'System Settings',
     icon: 'setting-2',
     path: '/admin/system'

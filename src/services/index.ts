@@ -53,3 +53,20 @@ export * from './policy.hooks';
 export * from './template.service';
 // export * from './template.types';
 export * from './template.hooks';
+
+// Banner Services
+export * from './banner.service';
+// Export banner-specific types explicitly to avoid conflicts with common types (IApiError, IPaginationMeta)
+export type {
+  IBanner,
+  IGetBannersParams,
+  IGetBannersResponse,
+  ICreateBannerRequest,
+  IUpdateBannerRequest,
+  ICreateBannerResponse,
+  IGetBannerByIdResponse,
+  IDeleteBannerResponse,
+} from './banner.types';
+// Note: IPaginationMeta and IApiError are not exported here to avoid conflicts
+// Import them directly from './banner.types' if needed
+export * from './banner.hooks';

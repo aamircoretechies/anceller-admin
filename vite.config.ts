@@ -37,6 +37,20 @@ export default defineConfig({
             console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
           });
         }
+      },
+      '/uploads': {
+        target: 'https://ancellor.duckdns.org',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path,
+        configure: (proxy, _options) => {
+          proxy.on('proxyRes', (proxyRes, _req, _res) => {
+            // Add CORS headers to proxied image responses
+            proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+            proxyRes.headers['Access-Control-Allow-Methods'] = 'GET';
+            proxyRes.headers['Cross-Origin-Resource-Policy'] = 'cross-origin';
+          });
+        }
       }
     }
   }
